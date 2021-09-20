@@ -83,6 +83,8 @@ hi Pmenu ctermbg=black ctermfg=magenta
 
 " Spelunker (better spell checking)
 set nospell "Avoids conflicts with vim's built in spellchecker.
+highlight SpelunkerSpellBad cterm=underline ctermfg=208 gui=underline guifg=#9e9e9e
+highlight SpelunkerComplexOrCompoundWord cterm=underline ctermfg=NONE gui=underline guifg=NONE
 
 " Conquer Of Completion
 " @SEE: https://github.com/neoclide/coc.nvim#example-vim-configuration
