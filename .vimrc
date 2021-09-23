@@ -68,6 +68,17 @@ hi SpellCap ctermbg=none ctermfg=yellow
 hi SpellBad ctermbg=none ctermfg=red
 hi Visual ctermbg=238
 
+" Sets the cursor glyph.
+" To change the glyph, change the number after the "\e["
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[1 q"
+
+" Reset the cursor on start (for older versions of vim, usually not required)
+augroup myCmds
+au!
+autocmd VimEnter * silent !echo -ne "\e[2 q"
+augroup END
+
 " Ale
 set signcolumn=yes
 highlight ALEWarning ctermbg=black ctermfg=yellow
