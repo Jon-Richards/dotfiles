@@ -66,9 +66,12 @@ hi Error ctermbg=none ctermfg=red
 hi SignColumn ctermbg=black
 hi SpellCap ctermbg=none ctermfg=yellow
 hi SpellBad ctermbg=none ctermfg=red
+hi Visual ctermbg=238
 
 " Ale
 set signcolumn=yes
+highlight ALEWarning ctermbg=black ctermfg=yellow
+highlight ALEError ctermbg=black ctermfg=red
 
 " Airline
 let g:airline#extensions#tabline#enabled = 1
