@@ -5,6 +5,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" GoYo (basically Zen mode, toggle with :Goyo)
+Plug 'junegunn/goyo.vim'
+
 " Ale
 Plug 'dense-analysis/ale'
 
@@ -31,13 +34,47 @@ Plug 'jparise/vim-graphql'        " GraphQL syntax
 
 call plug#end()
 
-set nonumber
+set number
 syntax on
 set splitright
 set splitbelow
 set mouse=n
 set hlsearch
 set background=dark
+
+" \e to :Explore
+nnoremap <Leader>e :Explore
+
+" \b for :buffers
+nnoremap <Leader>b :buffers
+
+" \d to delete current buffer
+nnoremap <Leader>d :bd
+
+" \n for no highlight
+nnoremap <Leader>n :noh
+
+" \y for yank multiple lines to system clipboard
+nnoremap <Leader>y "*y
+
+" \p to paste from system clipboard
+nnoremap <Leader>p "*p
+
+" \s to start search and replace in document
+nnoremap <Leader>s :%s/
+
+" \t to bring up a terminal window
+nnoremap <Leader>t :term
+
+" \nn for toggle number
+nnoremap <Leader>nn :set number!
+
+" Tab to next buffer, Shift + Tab to previous.
+nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
+nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>
+
+" Keep cursor in center of window when scrolling.
+set scrolloff=999
 
 " Ensure back space deletes lines, etc.
 set backspace=indent,eol,start
@@ -50,7 +87,7 @@ set shiftwidth=0
 set et
 
 " Highlight trailing whitespace
-highlight ExtraWhitespace ctermbg=white
+highlight ExtraWhitespace ctermbg=52
 match ExtraWhitespace /\s\+$/
 
 " Required for Airline Themes to render correctly
@@ -60,6 +97,7 @@ set t_Co=256
 set colorcolumn=81
 hi colorcolumn ctermbg=black ctermfg=red
 
+hi LineNr ctermfg=darkgrey
 hi DiffText ctermbg=darkgrey ctermfg=white
 hi CursorLine ctermbg=none ctermfg=white
 hi Error ctermbg=none ctermfg=red
@@ -67,6 +105,7 @@ hi SignColumn ctermbg=black
 hi SpellCap ctermbg=none ctermfg=yellow
 hi SpellBad ctermbg=none ctermfg=red
 hi Visual ctermbg=238
+hi MatchParen ctermbg=black ctermfg=45
 
 " Sets the cursor glyph.
 " To change the glyph, change the number after the "\e["
@@ -94,6 +133,7 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline_theme='luna'
 hi Pmenu ctermbg=black ctermfg=magenta
+hi Comment ctermfg=244
 
 " Spelunker (better spell checking)
 set nospell "Avoids conflicts with vim's built in spellchecker.
