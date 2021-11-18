@@ -32,6 +32,12 @@ Plug 'leafgarland/typescript-vim' " TypeScript syntax
 Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
 Plug 'jparise/vim-graphql'        " GraphQL syntax
 
+" Rust support
+" Additional CoC plugins should be installed:
+" @example
+" CocInstall coc-rust-analyzer for intellisense
+Plug 'rust-lang/rust.vim'
+
 call plug#end()
 
 set number
