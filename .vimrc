@@ -31,6 +31,7 @@ Plug 'pangloss/vim-javascript'    " JavaScript support
 Plug 'leafgarland/typescript-vim' " TypeScript syntax
 Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
 Plug 'jparise/vim-graphql'        " GraphQL syntax
+Plug 'posva/vim-vue'              " Vue files
 
 " Rust support
 " Additional CoC plugins should be installed:
@@ -47,6 +48,7 @@ set splitbelow
 set mouse=n
 set hlsearch
 set background=dark
+set nowrap
 
 " \e to :Explore
 nnoremap <Leader>e :Explore
@@ -110,7 +112,7 @@ hi Error ctermbg=none ctermfg=red
 hi SignColumn ctermbg=black
 hi SpellCap ctermbg=none ctermfg=yellow
 hi SpellBad ctermbg=none ctermfg=red
-hi Visual ctermbg=238
+hi Visual ctermbg=18
 hi MatchParen ctermbg=black ctermfg=45
 
 " Sets the cursor glyph.
