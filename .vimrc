@@ -87,6 +87,9 @@ set scrolloff=999
 " Ensure back space deletes lines, etc.
 set backspace=indent,eol,start
 
+" Set netrw to use rm -rf instead of just rm
+:let g:netrw_localrmdir='rm -rf'
+
 " Set tabs
 set ts=2
 set sts=2
@@ -127,7 +130,7 @@ autocmd VimEnter * silent !echo -ne "\e[2 q"
 augroup END
 
 " Ale
-set signcolumn=yes
+set signcolumn=number
 highlight ALEWarning ctermbg=black ctermfg=yellow
 highlight ALEError ctermbg=black ctermfg=red
 
